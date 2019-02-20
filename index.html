@@ -5,39 +5,73 @@
     <meta charset="UTF-8">
     <title>title</title>
     <style type="text/css">
+        body {
+            padding: 0px;
+            margin: 2em;
+        }
+        
         .flex-container {
             display: flex;
+            padding: 0;
+            margin: 0;
+        }
+        
+        h1 {
+            font-size: 1em;
+            font-weight: normal;
+            margin-bottom: 3em;
+        }
+        
+        p {
+            padding: 0;
+            margin: 0;
+            max-width: 66%;
         }
         
         ul {
             list-style-type: none;
+            margin: 0 3em 0 0;
+            padding: 0;
+            /*            padding: 0px 50px 0px 0px;*/
+        }
+        
+        li {
+            display: inline;
+            /*            padding: 0px 3px 0px 8px;*/
+        }
+        
+        li:after {
+            content: "\a";
+            white-space: pre;
         }
     </style>
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
-    <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.8.21/jquery-ui.min.js" type="text/javascript"></script>
 
 
 </head>
 
 <body>
-    <p>Intro text</p>
+    <h1>Yotam Hadar is a
+        <!--        <del>design director</del> <del>art director</del> <del>creative director</del> -->
+        graphic designer based in New York.</h1>
     <div class="flex-container">
         <ul id=years>
-            <li>2006</li>
-            <li>2007</li>
-            <li>2008</li>
-            <li>2009</li>
-            <li data-column="studios" data-item="8">2010</li>
-            <li>2011</li>
-            <li>2012</li>
-            <li>2013</li>
-            <li>2014</li>
-            <li>2015</li>
-            <li>2016</li>
-            <li>2017</li>
+            <li data-column="clients" data-item="1">2019</li>
             <li>2018</li>
-            <li>2019</li>
+            <li>2017</li>
+            <li>2016</li>
+            <li data-column="studios" data-item="1,8">2015</li>
+            <li>2013</li>
+            <li>2012</li>
+            <li>2011</li>
+            <li>2010</li>
+            <li>2009</li>
+            <li>2008</li>
+            <li>2007</li>
+            <li>2006</li>
+
+
         </ul>
+        <span>
         <ul id=studios>
             <li>Nike</li>
             <li>Pentagram</li>
@@ -45,31 +79,38 @@
             <li>Project Projects</li>
             <li>Sagmeister & Walsh</li>
             <li>Hugo & Marie</li>
-            <li>Danny Goldberg Design</li>
             <li>Adi Stern</li>
+            <li>BaconOppenheim</li>
             <li data-column="clients" data-item="4,7">Re-Levant</li>
-            <li>Open</li>
-            <li>Maariv</li>
+<!--            <li>Wicked Brands</li>-->
             <li>The League</li>
-        </ul>
+            <li>Maariv</li>
+            <li>Open</li>
+            <li>Danny Goldberg</li>
+            <li>Co-Op</li>
+            <BR>
+            <li>Yale University</li>
+            <li>Bezalel Academy</li>
+
+        </ul></span>
         <ul id=clients>
             <li>Client 01</li>
-            <li>Client 02</li>
+            <li>Movement Research</li>
             <li>Client 03</li>
             <li>Client 04</li>
             <li data-column="media" data-item="8">Client 05</li>
             <li>Client 06</li>
-            <li>Client 07</li>
+            <li>Goethe Institut</li>
             <li data-column="media" data-item="3">Client 08</li>
             <li>Client 09</li>
             <li>Client 10</li>
-            <li>Client 11</li>
-            <li>Client 12</li>
-            <li>Client 13</li>
+            <li>Yale University Art Gallery</li>
+            <li>Fondazione Prada</li>
+            <li>Container Artist Residency</li>
             <li>Client 14</li>
             <li>Client 15</li>
             <li>Client 16</li>
-            <li>Client 17</li>
+            <li>Israel Philharmonic Orchestra</li>
             <li>Client 18</li>
             <li>Client 19</li>
             <li>Client 20</li>
@@ -90,60 +131,81 @@
             <li>etc3</li>
         </ul>
     </div>
-    <p>Outro text</p>
+    <p>
+        </br>
+        </br>
+        </br>
+
+        <a>yotam_Hadar_Portfolio_2016.pdf</a>
+        </br>
+        <a>yotam_Hadar_CV.pdf</a>
+        </br>
+        <!--        </br>-->
+        <a>yotam.hadar@gmail.com</a>
+        </br>
+        <a>instagram.com/yotamh/</a>
+        </br>
+        <a>twitter.com/yotam/</a>
+        </br>
+        <a>linkedin.com/in/yotamhadar/</a>
+        </br>
+        <!--        <a>workingnotworking.com/9142-yotam/</a>-->
+        </br>
+
+
+
+
+    </p>
 
     <script type="text/javascript">
-
         var createSVG = () => {
-            var svg = document.createElementNS( "http://www.w3.org/2000/svg", "svg" );
-            svg.setAttribute( "height", window.innerHeight );
-            svg.setAttribute( "width", window.innerWidth );
-            svg.style = "position:absolute; left:0; top:0;pointer-events:none;";
-            document.body.appendChild( svg );
+            var svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+            svg.setAttribute("height", window.innerHeight);
+            svg.setAttribute("width", window.innerWidth);
+            svg.style = "position:absolute; left:2; top:9;pointer-events:none;";
+            document.body.appendChild(svg);
             return svg;
         };
 
         var svgEl = createSVG();
 
-        var drawLine = ( x1, y1, x2, y2 ) => {
-            var line = document.createElementNS( "http://www.w3.org/2000/svg", "line" );
-            line.setAttributeNS( null, 'x1', x1 );
-            line.setAttributeNS( null, 'y1', y1 );
-            line.setAttributeNS( null, 'x2', x2 );
-            line.setAttributeNS( null, 'y2', y2 );
-            line.style = "stroke:rgb(0,0,0);stroke-width:1;";
-            svgEl.appendChild( line );
+        var drawLine = (x1, y1, x2, y2) => {
+            var line = document.createElementNS("http://www.w3.org/2000/svg", "line");
+            line.setAttributeNS(null, 'x1', x1);
+            line.setAttributeNS(null, 'y1', y1);
+            line.setAttributeNS(null, 'x2', x2);
+            line.setAttributeNS(null, 'y2', y2);
+            line.style = "stroke:rgb(255,0,0);stroke-width:1.5;";
+            svgEl.appendChild(line);
         }
 
-        var drawLineFromTo = ( from, to ) => {
+        var drawLineFromTo = (from, to) => {
             var fromRect = from.getBoundingClientRect();
             var toRect = to.getBoundingClientRect();
-            drawLine( fromRect.right, fromRect.top + Math.floor( from.clientHeight / 2 ), toRect.left, toRect.top + Math.floor( to.clientHeight / 2 ) );
+            drawLine(fromRect.right, fromRect.top + Math.floor(from.clientHeight / 2), toRect.left, toRect.top + Math.floor(to.clientHeight / 2));
         }
 
-        var getListItem = ( columnId, itemNumber ) => document.getElementById( columnId ).children[ itemNumber ];
-        
-        var drawLinesForElement = ( el ) => {
-            if ( el.dataset.column ) {
-                var items = el.dataset.item.split( "," );
-                items.forEach( ( itemNumber ) => {
-                    var toElement = getListItem( el.dataset.column, itemNumber );
-                    drawLineFromTo( el,  toElement );
-                    drawLinesForElement( toElement );
-                } );
+        var getListItem = (columnId, itemNumber) => document.getElementById(columnId).children[itemNumber];
+
+        var drawLinesForElement = (el) => {
+            if (el.dataset.column) {
+                var items = el.dataset.item.split(",");
+                items.forEach((itemNumber) => {
+                    var toElement = getListItem(el.dataset.column, itemNumber);
+                    drawLineFromTo(el, toElement);
+                    drawLinesForElement(toElement);
+                });
             }
         };
 
-        var drawLinesForColumn = ( columnId ) => Array.from( document.getElementById( columnId ).children ).forEach( ( el ) => {
-            el.addEventListener( "mouseover", ( e ) => {
+        var drawLinesForColumn = (columnId) => Array.from(document.getElementById(columnId).children).forEach((el) => {
+            el.addEventListener("mouseover", (e) => {
                 svgEl.innerHTML = "";
-                drawLinesForElement( e.currentTarget );
-             } );
-         } );
+                drawLinesForElement(e.currentTarget);
+            });
+        });
 
-        drawLinesForColumn( "years" );
-        
-
+        drawLinesForColumn("years");
     </script>
 
 </body>
