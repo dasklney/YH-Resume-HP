@@ -72,73 +72,74 @@
 
         </ul>
         <ul id=studios data-previous="years">
-<li> Nike</li>
-<li>Pentagram</li>
-<li>2x4</li>
-<li>Project Projects</li>
-<li>Sagmeister & Walsh</li>
-<li>Hugo & Marie</li>
-<li>Dresscode</li>
-<li>Shual</li>
-<li>Stink Studios</li>
-<li>BaconOppenheim</li>
-<li>Re-Levant</li>
-<li>Adi Stern</li>
-<li>The League</li>
-<li>Maariv</li>
-<li>Open TLV</li>
-<li>Danny Goldberg</li>
-<li>Co-Op</li>
-<li>B-Reel</li>
-<li>Imagination</li>
-<li>Brio ID</li>
-<li>Studio Dangot</li>
-<li>Wicked Brands</li>
+            <li> Nike</li>
+            <li>Pentagram</li>
+            <li>2x4</li>
+            <li>Project Projects</li>
+            <li>Sagmeister & Walsh</li>
+            <li>Hugo & Marie</li>
+            <li>Dresscode</li>
+            <li>Shual</li>
+            <li>Stink Studios</li>
+            <li>BaconOppenheim</li>
+            <li>Re-Levant</li>
+            <li>Adi Stern</li>
+            <li>The League</li>
+            <li>Maariv</li>
+            <li>Open TLV</li>
+            <li>Danny Goldberg</li>
+            <li>Co-Op</li>
+            <li>B-Reel</li>
+            <li>Imagination</li>
+            <li>Brio ID</li>
+            <li>Studio Dangot</li>
+            <li>Wicked Brands</li>
             <li data-column="clients" data-item="4,7">Re-Levant</li>
 
         </ul>
         <ul id=clients data-previous="studios">
-<li>Artspace New Haven</li>
-<li>Container Artist Residency</li>
-<li>Cuyana</li>
-<li>Adjaye Associates</li>
-<li>Design Museum Holon</li>
-<li>Eaton Workshop</li>
-<li>Face.com</li>
-<li>Fondazione Prada</li>
-<li>Fontef Type Foundry</li>
-<li>Goethe Institut</li>
-<li>Google</li>
-<li>Hisense</li>
-<li>Hyundai</li>
-<li>ICQ</li>
-<li>Isotopia Molecular Imaging</li>
-<li>Israel Antiquities Authority</li>
-<li>Israel Philatelic Service</li>
-<li>Israel Philharmonic Orchestra</li>
-<li>M+</li>
-<li>Meitar Ensemble</li>
-<li>MoMA</li>
-<li>Movement Research</li>
-<li>PepsiCo</li>
-<li>Public Knowledge Workshop</li>
-<li>Public Movement</li>
-<li>RC Cola</li>
-<li>Strava</li>
-<li>Tel Aviv Museum of Art</li>
-<li>Tel Aviv University</li>
-<li>Tel Aviv Yafo municipality</li>
-<li>The Bass Museum of Art</li>
-<li>The Intercept</li>
-<li>University of the Arts</li>
-<li>Waze</li>
-<li>Yahoo</li>
-<li>Yale School of Architecture</li>
-<li>Yale School of Art</li>
-<li>Yale University Art Gallery</li>            <li data-column="media" data-item="8">Client 05</li>
+            <li>Artspace New Haven</li>
+            <li>Container Artist Residency</li>
+            <li>Cuyana</li>
+            <li>Adjaye Associates</li>
+            <li>Design Museum Holon</li>
+            <li>Eaton Workshop</li>
+            <li>Face.com</li>
+            <li>Fondazione Prada</li>
+            <li>Fontef Type Foundry</li>
+            <li>Goethe Institut</li>
+            <li>Google</li>
+            <li>Hisense</li>
+            <li>Hyundai</li>
+            <li>ICQ</li>
+            <li>Isotopia Molecular Imaging</li>
+            <li>Israel Antiquities Authority</li>
+            <li>Israel Philatelic Service</li>
+            <li>Israel Philharmonic Orchestra</li>
+            <li>M+</li>
+            <li>Meitar Ensemble</li>
+            <li>MoMA</li>
+            <li>Movement Research</li>
+            <li>PepsiCo</li>
+            <li>Public Knowledge Workshop</li>
+            <li>Public Movement</li>
+            <li>RC Cola</li>
+            <li>Strava</li>
+            <li>Tel Aviv Museum of Art</li>
+            <li>Tel Aviv University</li>
+            <li>Tel Aviv Yafo municipality</li>
+            <li>The Bass Museum of Art</li>
+            <li>The Intercept</li>
+            <li>University of the Arts</li>
+            <li>Waze</li>
+            <li>Yahoo</li>
+            <li>Yale School of Architecture</li>
+            <li>Yale School of Art</li>
+            <li>Yale University Art Gallery</li>
+            <li data-column="media" data-item="8">Client 05</li>
         </ul>
-        
-        
+
+
         <ul id=media data-previous="clients">
             <li>App / Mobile</li>
             <li>Book</li>
@@ -181,82 +182,80 @@
 
     </p>
 
-     <script type="text/javascript">
-
+    <script type="text/javascript">
         var createSVG = () => {
-            var svg = document.createElementNS( "http://www.w3.org/2000/svg", "svg" );
-            svg.setAttribute( "height", window.innerHeight );
-            svg.setAttribute( "width", window.innerWidth );
+            var svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+            svg.setAttribute("height", window.innerHeight);
+            svg.setAttribute("width", window.innerWidth);
             svg.style = "position:absolute; left:0; top:0;pointer-events:none;";
-            document.body.appendChild( svg );
+            document.body.appendChild(svg);
             return svg;
         };
 
         var svgEl = createSVG();
 
-        var drawLine = ( x1, y1, x2, y2 ) => {
-            var line = document.createElementNS( "http://www.w3.org/2000/svg", "line" );
-            line.setAttributeNS( null, 'x1', x1 );
-            line.setAttributeNS( null, 'y1', y1 );
-            line.setAttributeNS( null, 'x2', x2 );
-            line.setAttributeNS( null, 'y2', y2 );
-            line.style = "stroke:rgb(0,0,0);stroke-width:1;";
-            svgEl.appendChild( line );
+        var drawLine = (x1, y1, x2, y2) => {
+            var line = document.createElementNS("http://www.w3.org/2000/svg", "line");
+            line.setAttributeNS(null, 'x1', x1);
+            line.setAttributeNS(null, 'y1', y1);
+            line.setAttributeNS(null, 'x2', x2);
+            line.setAttributeNS(null, 'y2', y2);
+            line.style = "stroke:rgb(255,0,0);stroke-width:1.5;";
+            svgEl.appendChild(line);
         }
 
-        var drawLineToFrom = ( to, from ) => {
+        var drawLineToFrom = (to, from) => {
             var toRect = to.getBoundingClientRect();
             var fromRect = from.getBoundingClientRect();
-            drawLine( toRect.left, toRect.top + 10, fromRect.right, fromRect.top + 10 );
+            drawLine(toRect.left, toRect.top + 10, fromRect.right, fromRect.top + 10);
         }
 
-        var drawLineFromTo = ( from, to ) => {
+        var drawLineFromTo = (from, to) => {
             var fromRect = from.getBoundingClientRect();
             var toRect = to.getBoundingClientRect();
-            drawLine( fromRect.right, fromRect.top + 10, toRect.left, toRect.top + 10 );
+            drawLine(fromRect.right, fromRect.top + 10, toRect.left, toRect.top + 10);
         }
 
-        var getListItem = ( columnId, itemNumber ) => document.getElementById( columnId ).children[ itemNumber ];
-        
-        var drawBackLinesForElement = ( el ) => {
-            if ( el.parentNode.dataset.previous ) {
-                var itemIndex = Array.prototype.indexOf.call( el.parentNode.children, el );
-                Array.from( document.getElementById( el.parentNode.dataset.previous ).children ).forEach( ( item ) => {
-                    if ( item.dataset.item ) {
-                        var items = item.dataset.item.split( "," );
-                        if ( items.indexOf( itemIndex.toString() ) >= 0 ) {
-                            drawLineToFrom( el, item );
-                            drawBackLinesForElement( item );
+        var getListItem = (columnId, itemNumber) => document.getElementById(columnId).children[itemNumber];
+
+        var drawBackLinesForElement = (el) => {
+            if (el.parentNode.dataset.previous) {
+                var itemIndex = Array.prototype.indexOf.call(el.parentNode.children, el);
+                Array.from(document.getElementById(el.parentNode.dataset.previous).children).forEach((item) => {
+                    if (item.dataset.item) {
+                        var items = item.dataset.item.split(",");
+                        if (items.indexOf(itemIndex.toString()) >= 0) {
+                            drawLineToFrom(el, item);
+                            drawBackLinesForElement(item);
                         }
                     }
-                } );
+                });
             }
-        };
-        
-        var drawLinesForElement = ( el ) => {
-            if ( el.dataset.column ) {
-                var items = el.dataset.item.split( "," );
-                items.forEach( ( itemNumber ) => {
-                    var toElement = getListItem( el.dataset.column, itemNumber );
-                    drawLineFromTo( el, toElement );
-                    drawLinesForElement( toElement );
-                } );
-            }
-            drawBackLinesForElement( el );
         };
 
-        var drawLinesForColumn = ( columnId ) => Array.from( document.getElementById( columnId ).children ).forEach( ( el ) => {
-            el.addEventListener( "mouseover", ( e ) => {
+        var drawLinesForElement = (el) => {
+            if (el.dataset.column) {
+                var items = el.dataset.item.split(",");
+                items.forEach((itemNumber) => {
+                    var toElement = getListItem(el.dataset.column, itemNumber);
+                    drawLineFromTo(el, toElement);
+                    drawLinesForElement(toElement);
+                });
+            }
+            drawBackLinesForElement(el);
+        };
+
+        var drawLinesForColumn = (columnId) => Array.from(document.getElementById(columnId).children).forEach((el) => {
+            el.addEventListener("mouseover", (e) => {
                 svgEl.innerHTML = "";
-                drawLinesForElement( e.currentTarget );
-             } );
-         } );
+                drawLinesForElement(e.currentTarget);
+            });
+        });
 
-        drawLinesForColumn( "years" );
-        drawLinesForColumn( "studios" );
-        drawLinesForColumn( "clients" );
-        drawLinesForColumn( "media" );
-
+        drawLinesForColumn("years");
+        drawLinesForColumn("studios");
+        drawLinesForColumn("clients");
+        drawLinesForColumn("media");
     </script>
 
 
