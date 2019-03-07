@@ -157,56 +157,84 @@
 
     </p>
 
-    <script type="text/javascript">
+     <script type="text/javascript">
+
         var createSVG = () => {
-            var svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
-            svg.setAttribute("height", window.innerHeight);
-            svg.setAttribute("width", window.innerWidth);
-            svg.style = "position:absolute; left:2; top:9;pointer-events:none;";
-            document.body.appendChild(svg);
+            var svg = document.createElementNS( "http://www.w3.org/2000/svg", "svg" );
+            svg.setAttribute( "height", window.innerHeight );
+            svg.setAttribute( "width", window.innerWidth );
+            svg.style = "position:absolute; left:0; top:0;pointer-events:none;";
+            document.body.appendChild( svg );
             return svg;
         };
 
         var svgEl = createSVG();
 
-        var drawLine = (x1, y1, x2, y2) => {
-            var line = document.createElementNS("http://www.w3.org/2000/svg", "line");
-            line.setAttributeNS(null, 'x1', x1);
-            line.setAttributeNS(null, 'y1', y1);
-            line.setAttributeNS(null, 'x2', x2);
-            line.setAttributeNS(null, 'y2', y2);
-            line.style = "stroke:rgb(255,0,0);stroke-width:1.5;";
-            svgEl.appendChild(line);
+        var drawLine = ( x1, y1, x2, y2 ) => {
+            var line = document.createElementNS( "http://www.w3.org/2000/svg", "line" );
+            line.setAttributeNS( null, 'x1', x1 );
+            line.setAttributeNS( null, 'y1', y1 );
+            line.setAttributeNS( null, 'x2', x2 );
+            line.setAttributeNS( null, 'y2', y2 );
+            line.style = "stroke:rgb(0,0,0);stroke-width:1;";
+            svgEl.appendChild( line );
         }
 
-        var drawLineFromTo = (from, to) => {
+        var drawLineToFrom = ( to, from ) => {
+            var toRect = to.getBoundingClientRect();
+            var fromRect = from.getBoundingClientRect();
+            drawLine( toRect.left, toRect.top + 10, fromRect.right, fromRect.top + 10 );
+        }
+
+        var drawLineFromTo = ( from, to ) => {
             var fromRect = from.getBoundingClientRect();
             var toRect = to.getBoundingClientRect();
-            drawLine(fromRect.right, fromRect.top + Math.floor(from.clientHeight / 2), toRect.left, toRect.top + Math.floor(to.clientHeight / 2));
+            drawLine( fromRect.right, fromRect.top + 10, toRect.left, toRect.top + 10 );
         }
 
-        var getListItem = (columnId, itemNumber) => document.getElementById(columnId).children[itemNumber];
-
-        var drawLinesForElement = (el) => {
-            if (el.dataset.column) {
-                var items = el.dataset.item.split(",");
-                items.forEach((itemNumber) => {
-                    var toElement = getListItem(el.dataset.column, itemNumber);
-                    drawLineFromTo(el, toElement);
-                    drawLinesForElement(toElement);
-                });
+        var getListItem = ( columnId, itemNumber ) => document.getElementById( columnId ).children[ itemNumber ];
+        
+        var drawBackLinesForElement = ( el ) => {
+            if ( el.parentNode.dataset.previous ) {
+                var itemIndex = Array.prototype.indexOf.call( el.parentNode.children, el );
+                Array.from( document.getElementById( el.parentNode.dataset.previous ).children ).forEach( ( item ) => {
+                    if ( item.dataset.item ) {
+                        var items = item.dataset.item.split( "," );
+                        if ( items.indexOf( itemIndex.toString() ) >= 0 ) {
+                            drawLineToFrom( el, item );
+                            drawBackLinesForElement( item );
+                        }
+                    }
+                } );
             }
         };
+        
+        var drawLinesForElement = ( el ) => {
+            if ( el.dataset.column ) {
+                var items = el.dataset.item.split( "," );
+                items.forEach( ( itemNumber ) => {
+                    var toElement = getListItem( el.dataset.column, itemNumber );
+                    drawLineFromTo( el, toElement );
+                    drawLinesForElement( toElement );
+                } );
+            }
+            drawBackLinesForElement( el );
+        };
 
-        var drawLinesForColumn = (columnId) => Array.from(document.getElementById(columnId).children).forEach((el) => {
-            el.addEventListener("mouseover", (e) => {
+        var drawLinesForColumn = ( columnId ) => Array.from( document.getElementById( columnId ).children ).forEach( ( el ) => {
+            el.addEventListener( "mouseover", ( e ) => {
                 svgEl.innerHTML = "";
-                drawLinesForElement(e.currentTarget);
-            });
-        });
+                drawLinesForElement( e.currentTarget );
+             } );
+         } );
 
-        drawLinesForColumn("years");
+        drawLinesForColumn( "years" );
+        drawLinesForColumn( "studios" );
+        drawLinesForColumn( "clients" );
+        drawLinesForColumn( "media" );
+
     </script>
+
 
 </body>
 
